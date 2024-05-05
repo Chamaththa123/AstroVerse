@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../assets/css/ImageLoader.css";
+import "../../assets/css/imageLoader.css";
 import { ArrowRight } from "../../utils/icons";
 import MrpDetails from "./MrpDetails";
 
