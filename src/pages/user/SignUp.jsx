@@ -54,7 +54,7 @@ export default function SignUp() {
 
     try {
       const response = await fetch(
-        "http://chamaththa.infinitoapparel.ca/api/users/register",
+        "https://chamaththa.infinitoapparel.ca/api/users/register",
         {
           method: "POST",
           headers: {
