@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../assets/css/ImageLoader.css";
+import "../../assets/css/imageLoader.css";
 import { Dialog, Card } from "@material-tailwind/react";
 import { CloseIcon, ProcessingIcon } from "../../utils/icons";
 
