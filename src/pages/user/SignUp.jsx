@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Alert } from "@material-tailwind/react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignUp() {
   const initialState = {
@@ -67,14 +69,17 @@ export default function SignUp() {
         setSuccessMessage("User registered successfully!");
         setFormData(initialState);
         setErrorMessage("");
+        toast.success("User registered successfully!");
       } else {
         setSuccessMessage("");
         setErrorMessage("Registration failed.");
+        toast.error("Registration failed.");
       }
     } catch (error) {
       console.error("Error registering user:", error);
       setErrorMessage("Error registering user. Please try again later.");
       setSuccessMessage("");
+      toast.error("Error registering user. Please try again later.");
     }
   };
 

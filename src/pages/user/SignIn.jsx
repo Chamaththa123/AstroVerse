@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import axios from "axios"; // Import axios
 import { useStateContext } from "../../contexts/NavigationContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const SignIn = ({ onSuccess }) => {
   const { setUser, setToken } = useStateContext();
@@ -11,6 +13,8 @@ export const SignIn = ({ onSuccess }) => {
     email: "",
     password: "",
   });
+
+  const [loginError, setLoginError] = useState(""); // State to manage login errors
 
   // Handle login form submission
   const handleLogin = (e) => {
@@ -27,18 +31,26 @@ export const SignIn = ({ onSuccess }) => {
 
     if (Object.keys(validationErrors).length === 0) {
       axios
-        .post("https://chamaththa.infinitoapparel.ca/api/users/login", loginData)
+        .post(
+          "https://chamaththa.infinitoapparel.ca/api/users/login",
+          loginData
+        )
         .then(({ data }) => {
           setUser(data.user);
           setToken(data.token);
           emailRef.current.value = "";
           passwordRef.current.value = "";
+          setLoginError(""); // Clear any previous login errors
           onSuccess();
+          toast.success("Login successful!");
         })
         .catch(({ response }) => {
           if (response && response.status === 401) {
-            console.log("Invalid email or password");
+            setLoginError("Invalid Email or Password");
+            toast.error("Invalid Email or Password");
           } else {
+            setLoginError("An error occurred. Please try again later.");
+            toast.error("An error occurred. Please try again later.");
           }
         });
     }
@@ -101,6 +113,7 @@ export const SignIn = ({ onSuccess }) => {
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };

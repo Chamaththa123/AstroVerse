@@ -37,7 +37,7 @@ export const UserLogin = ({ handleOpen, open }) => {
         size="xs"
         open={open}
         // handler={handleClose}
-        className="bg-transparent shadow-none rounded-sm overflow-y-scroll scrollbar-y-style overflow-x-hidden font-inter"
+        className="bg-transparent shadow-none rounded-[20px]  font-inter"
       >
         <Card className="mx-auto w-full p-5 rounded-sm font-inter">
           <div className="flex justify-end align-center">
