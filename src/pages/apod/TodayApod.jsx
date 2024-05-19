@@ -59,21 +59,21 @@ export default function TodayApod() {
       <div>
         {apodData && (
           <div>
-            <div className="md:flex">
-              <div className="md:w-[50%] w-full">
+            <div className="xl:flex">
+              <div className="xl:w-[50%] w-full">
                 <h2 className="text-[25px] font-semibold mt-4 md:w-[85%]">
                   {apodData.title}
                 </h2>
                 <div className="text-gray-500 font-medium">{formattedDate}</div>
                 <div className="border-2 my-[1%]"></div>
-                <p className="mt-6 leading-8 font-normal font-inter md:block hidden">
+                <p className="mt-6 leading-8 font-normal font-inter xl:block hidden">
                   {apodData.explanation}
                 </p>
-                <div className="mt-3 font-inter md:block hidden">
+                <div className="mt-3 font-inter xl:block hidden">
                   &copy;<i>{apodData?.copyright}</i>
                 </div>
               </div>
-              <div className="md:w-[50%] w-full">
+              <div className="xl:w-[50%] w-full">
                 {apodData.media_type === "image" ? (
                   <div className="float-right md:w-[85%] w-full mt-4 ">
                     {imageLoading ? (
@@ -101,9 +101,7 @@ export default function TodayApod() {
                   <iframe
                     src={apodData.url}
                     title={apodData.title}
-                    className="mt-4 items-center justify-center"
-                    width="560"
-                    height="415"
+                    className="mt-10 items-center xl:mb-0 mb-5 justify-center xl:w-full w-full h-[415px] rounded-md xl:ml-8"
                     frameBorder="0"
                     allowFullScreen
                   ></iframe>
@@ -112,7 +110,7 @@ export default function TodayApod() {
                 )}
               </div>
             </div>
-            <p className="leading-8 font-medium font-inter block md:hidden">
+            <p className="leading-8 font-medium font-inter block xl:hidden">
               {apodData.explanation}
             </p>
             <div className="mt-3 font-inter block md:hidden">

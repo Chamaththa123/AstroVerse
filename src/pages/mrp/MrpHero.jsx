@@ -46,7 +46,7 @@ export default function MrpHero() {
   return (
     <section
       ref={ref}
-      className="overflow-hidden w-full xl:h-[600px] md:h-[60vh] h-[380px]  mt-[-40px] relative flex items-center justify-center font-inter"
+      className="overflow-hidden w-full xl:h-[600px]  h-[380px]  mt-[-40px] relative flex items-center justify-center font-inter"
     >
       <img
         src={hero}

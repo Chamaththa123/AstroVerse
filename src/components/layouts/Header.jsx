@@ -55,7 +55,7 @@ export const Header = () => {
 
   const location = useLocation();
   const currentPath = location.pathname;
-  const headerColor = currentPath === "/" ? "bg-transparent fixed" : "bg-black";
+  const headerColor = currentPath === "/" ? "xl:bg-transparent fixed bg-black" : "bg-black";
 
   const [newOpen, setNewOpen] = useState(false);
   const newHandleOpen = () => setNewOpen((cur) => !cur);
@@ -116,26 +116,13 @@ export const Header = () => {
         </div>
       </div>
 
-      {/* <Link
-        to="/schedule"
-        className="md:hidden inline-flex px-4 py-2 bg-red-600 justify-center items-center  text-white text-md font-bold hover:bg-gradient-to-r hover:from-[#23216E] hover:via-[#830862] hover:to-red-400 "
-      >
-        Schedule a call
-      </Link> */}
       <span className="xl:hidden" onClick={handleFadeIn}>
-        {/* <GiHamburgerMenu className=' text-[30px] border-4 border-blue rounded-md ' /> */}
         <img
           src={menu}
           className=" w-[37px] border-4 border-[#F5F5F5] bg-[#F5F5F5] rounded-md bg-[F5F5F5]"
           alt=""
         />
       </span>
-      {/* <Link
-        to="/schedule"
-        className="hidden xl:inline-flex px-7 py-4 bg-red-600 justify-center items-center gap-2.5  text-white text-lg font-bold hover:bg-gradient-to-r hover:from-[#23216E] hover:via-[#830862] hover:to-red-400 "
-      >
-        Schedule a call
-      </Link> */}
       <div
         className={`fixed w-full inset-0 top-0 left-0 bottom-0 bg-white h-[100vh] p-[20px] transition transform duration-500 ease-in-out fade-up-enter-active ${
           visibleMObile ? "fade-up-enter-to" : "fade-up-enter-from "
