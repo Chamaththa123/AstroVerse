@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-import hero from "./../../assets/images/hero.mp4";
+import hero from "./../../assets/images/FloatinginSpace.mp4";
 import { Header } from "../../components/layouts/Header";
 import Footer from "../../components/layouts/Footer";
+import { HomeVideo1 } from "./HomeVideo1";
 
 export const Home = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -37,7 +38,7 @@ export const Home = () => {
         >
           <source src={hero} type="video/mp4" />
         </video>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-80"></div>
         <div className="absolute w-full xl:h-screen h-[80vh] flex items-center flex-col justify-center gap-[30px]">
           <div className="text-center text-[#F2F9FF] xl:text-[90px] font-bold xl:leading-[100px] text-[45px] leading-[50px] md:mt-0 mt-4">
             AstroVerse
@@ -48,7 +49,10 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <section className="md:mt-0 -mt-10">
+      <section>
+        <HomeVideo1 />
+      </section>
+      <section className="-mt-10">
         <Footer />
       </section>
     </>
